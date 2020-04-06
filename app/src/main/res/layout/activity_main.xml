@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="Result"
+    android:textColor="@color/colorPrimary"
+    android:layout_gravity="center"
+    android:textSize="30sp"
+    android:id="@+id/result"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/img"
+        android:layout_height="wrap_content"
+        android:src="@drawable/empty_dice"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:onClick="showToast"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Respond to user click!"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:onClick="showGameActivity"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Game !"
+
+        />
+</LinearLayout>
