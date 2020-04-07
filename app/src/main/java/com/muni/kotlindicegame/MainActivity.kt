@@ -47,4 +47,9 @@ lateinit var im:ImageView
 
     }
 
+    fun DataActivity(view: View) {
+        /*val intent=Intent(this,DataBindingActivity::class.java)
+        startActivity(intent)*/
+    }
+
 }

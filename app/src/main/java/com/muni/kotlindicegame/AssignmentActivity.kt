@@ -20,8 +20,9 @@ Thanks*/
 class AssignmentActivity : AppCompatActivity() {
     lateinit var p1_image: ImageView
     lateinit var p2_image: ImageView
-    var scorep1=0
-    var scorep2=0
+
+    var scorep1: Int=0
+    var scorep2: Int =0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_assignment)
@@ -29,12 +30,7 @@ class AssignmentActivity : AppCompatActivity() {
         p2_image = findViewById(R.id.imgp2)
 
     }
-    fun assignmentEvent(view: View) {
-        var r=(1..6).random()
-        var r1=(1..6).random()
-        displayDic(r)
-        displayDicp2(r1)
-    }
+
     //for player one
 
 
@@ -42,14 +38,21 @@ class AssignmentActivity : AppCompatActivity() {
     fun play_player1(view: View) {
         val r = (1..6).random()
         val tv_p1: TextView = findViewById(R.id.resultp1)//fro getting id
-        scorep1=r
+        scorep1=scorep1+r
         val tv_p1_totalScore:TextView =findViewById(R.id.player1_score)
-        if (r!=6) {
-            scorep1++
+        if (r==0)
+        {
+            imgp1.setImageResource(R.drawable.dice_1)
+            tv_p1_totalScore.text = "1"
         }
-        tv_p1_totalScore.text="Score "+scorep1.toString()
-        tv_p1.text ="Dice "+ r.toString()
-        displayDic(r)
+        else if (r==6)
+        {
+            tv_p1_totalScore.text = r.toString()
+        }else {
+            tv_p1_totalScore.text = "Score " + scorep1.toString()
+            tv_p1.text = "Dice " + r.toString()
+            displayDic(r)
+        }
     }
 
     private fun displayDic(r: Int) {
@@ -72,11 +75,22 @@ class AssignmentActivity : AppCompatActivity() {
         val r1 = (1..6).random()
         val tv_p2: TextView = findViewById(R.id.resultp2)//fro getting id
         val tv_p2_totalScore:TextView =findViewById(R.id.player2_score)
-        scorep2=r1
-        if (r1!=6) {
-            scorep2++
+        scorep2=scorep2+r1
+        if (r1==0)
+        {
+            imgp2.setImageResource(R.drawable.dice_1)
+            tv_p2_totalScore.text = "1"
         }
-        tv_p2_totalScore.text="Score "+scorep2.toString()
+        else if (r1==6)
+        {
+            tv_p2_totalScore.text = r1.toString()
+        }else {
+            tv_p2_totalScore.text = "Score " + scorep1.toString()
+            tv_p2.text = "Dice " + r1.toString()
+            displayDic(r1)
+        }
+        tv_p2_totalScore.text="Score "+scorep2.toInt()
+
         tv_p2.text = "Dice "+r1.toString()
         displayDicp2(r1)
     }

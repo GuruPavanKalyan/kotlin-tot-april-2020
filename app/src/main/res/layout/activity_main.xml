@@ -37,4 +37,13 @@
         android:text="Game !"
 
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:onClick="DataActivity"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Data Binding !"
+
+        />
+
 </LinearLayout>
